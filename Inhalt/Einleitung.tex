@@ -24,6 +24,7 @@ Ziel dieses Projekts ist die Entwicklung eines zuverlässigen und effizienten QR
     \item \textbf{Generierung einzigartiger QR-Codes für spezifische Bestellungen:} Für jede Bestellung soll ein individueller QR-Code generiert werden, der durch einen Mitarbeiter eingescannt und entwertet werden kann.
     \item \textbf{Sichere und effiziente Einlösung durch Scannen der QR-Codes:} Die QR-Codes sollen von den Mitarbeitern gescannt werden können, um die Echtheit und Gültigkeit der Tickets oder Gutscheine sofort zu überprüfen.
     \item \textbf{Intuitive Benutzeroberfläche für die Überprüfung der Bestellinformationen und die Entwertung der Tickets/Gutscheine:} Das System soll eine benutzerfreundliche Oberfläche bieten, die es den Mitarbeitern ermöglicht, die Bestellinformationen schnell und einfach einzusehen und die Tickets oder Gutscheine nach der Einlösung zu entwerten.
+	\item \textbf{Einfache Installation mittels composer:} Die Anwendung muss mit dem Paketmanager composer kompatibel sein, um eine einfache Installation zu gewährleisten.
 \end{itemize}
 
 Durch die Erfüllung dieser Ziele wird das Projekt erfolgreich abgeschlossen.
@@ -59,11 +60,21 @@ Insgesamt soll die Implementierung eines QR-Code-basierten Einlösungsprogramms 
 
 \subsection{Projektschnittstellen} 
 \label{sec:Projektschnittstellen}
+
+Die Anwendung soll verschiedene Schnittstellen bereitstellen, um eine nahtlose Integration und effiziente Nutzung zu gewährleisten. Im Folgenden werden die geplanten Schnittstellen beschrieben.
+
+\subsubsection{Technische Schnittstellen}
+
 \begin{itemize}
-	\item Mit welchen anderen Systemen interagiert die Anwendung (technische Schnittstellen)?
-	\item Wer genehmigt das Projekt \bzw stellt Mittel zur Verfügung? 
-	\item Wer sind die Benutzer der Anwendung?
-	\item Wem muss das Ergebnis präsentiert werden?
+    \item \textbf{Interaktion mit Shop-Systemen:} Die Anwendung soll sich nahtlos in die bestehenden Shop-Systeme integrieren. Hierbei soll für jede Bestellung ein einzigartiger QR-Code generiert werden, der in den Bestelldaten gespeichert und den Kunden zur Verfügung gestellt wird.
+    \item \textbf{API-Schnittstellen:} Die Anwendung soll mehrere API-Endpunkte bereitstellen, um die Interaktion mit externen Systemen und die Verarbeitung der QR-Codes zu ermöglichen. Dies umfasst Endpunkte für die Validierung und Entwertung der QR-Codes sowie die Bereitstellung der entsprechenden Bestelldetails.
+\end{itemize}
+
+\subsubsection{Präsentation der Ergebnisse}
+
+\begin{itemize}
+    \item \textbf{Benutzeroberfläche:} Die Ergebnisse der QR-Code-Verifizierung und Einlösung sollen über eine benutzerfreundliche Oberfläche präsentiert werden.
+    \item \textbf{Darstellung für Mitarbeiter:} Die Bestellinformationen sollen den Mitarbeitern in einem klaren und strukturierten Format präsentiert werden, um eine schnelle und effiziente Überprüfung und Entwertung der Tickets zu ermöglichen. Dies umfasst die Anzeige der Bestelldetails wie Bestellnummer, Datum und Status sowie den Entwertungsstatus.
 \end{itemize}
 
 
