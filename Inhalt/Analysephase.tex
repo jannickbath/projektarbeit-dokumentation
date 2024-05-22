@@ -80,14 +80,15 @@ Ein Beispiel für eine Entscheidungsmatrix findet sich in Kapitel~\ref{sec:Archi
 
 \subsection{Anwendungsfälle}
 \label{sec:Anwendungsfaelle}
-\begin{itemize}
-	\item Welche Anwendungsfälle soll das Projekt abdecken?
-	\item Einer oder mehrere interessante (!) Anwendungsfälle könnten exemplarisch durch ein Aktivitätsdiagramm oder eine \ac{EPK} detailliert beschrieben werden. 
-\end{itemize}
 
-\paragraph{Beispiel}
-Ein Beispiel für ein Use Case-Diagramm findet sich im \Anhang{app:UseCase}.
+Der erste Anwendungsfall betrifft die Generierung eines QR-Codes für eine Bestellung. Sobald ein Kunde im Onlineshop eine Bestellung abschließt, wird automatisch ein einzigartiger QR-Code generiert. Dieser QR-Code enthält alle relevanten Bestelldaten und wird in der Datenbank gespeichert. Anschließend wird der QR-Code per E-Mail an den Kunden versendet. Dies ermöglicht eine einfache und sichere Verifizierung der Bestellung.
 
+Ein weiterer zentraler Anwendungsfall ist die Verifizierung und Einlösung des QR-Codes durch einen Mitarbeiter. Der Kunde präsentiert den QR-Code, den er per E-Mail erhalten hat. Der Mitarbeiter scannt den QR-Code, und das System überprüft dessen Gültigkeit. Ist der QR-Code gültig, werden dem Mitarbeiter alle relevanten Informationen zur Bestellung angezeigt. Der Mitarbeiter kann dann entscheiden, ob er den QR-Code tatsächlich einlösen möchte. Nach der Bestätigung wird der QR-Code im System als eingelöst markiert und kann nicht erneut verwendet werden. Dies stellt sicher, dass jeder QR-Code nur einmal genutzt werden kann und verhindert Betrugsversuche.
+
+Zusätzlich gibt es die Möglichkeit einer manuelle Suche nach den Tickets. Sollte es einmal nicht möglich sein, den QR-Code zu scannen, kann der Mitarbeiter nach einem Ticket suchen. Das Programm zeigt dann die Gültigkeit des Tickets an und gibt die entsprechenden Bestellinformationen aus, um die Einlösung zu ermöglichen.
+
+\paragraph{Use Case-Diagramm}
+Ein Use Case-Diagramm befindet sich im \Anhang{app:UseCase}.
 
 \subsection{Qualitätsanforderungen}
 \label{sec:Qualitaetsanforderungen}

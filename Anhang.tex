@@ -15,11 +15,33 @@
 
 \subsection{Use Case-Diagramm}
 \label{app:UseCase}
-Use Case-Diagramme und weitere \acs{UML}-Diagramme kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://metauml.sourceforge.net/old/usecase-diagram.html}.
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{UseCase.pdf}{0.7}
-\caption{Use Case-Diagramm}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \usetikzlibrary{shapes,arrows}
+        \tikzstyle{actor}=[draw, ellipse, fill=gray!20, minimum height=2em]
+        \tikzstyle{usecase}=[draw, ellipse, minimum height=2em, minimum width=3em]
+
+        \node [actor] (employee) {Mitarbeiter};
+        \node [usecase, right=of employee, yshift=2cm] (scan) {QR-Code scannen};
+        \node [usecase, below of=scan] (check) {Gültigkeit prüfen};
+        \node [usecase, below of=check] (display) {Ticketinformationen anzeigen};
+        \node [usecase, below of=display] (confirm) {Einlösung bestätigen};
+        \node [usecase, below of=confirm] (invalidate) {QR-Code als ungültig markieren};
+
+        \draw [->] (employee) -- (scan);
+        \draw [->] (scan) -- (check);
+        \draw [->] (check) -- (display);
+        \draw [->] (display) -- (confirm);
+        \draw [->] (confirm) -- (invalidate);
+
+        \node [below of=employee, yshift=-3cm] (note) {Kunde zeigt QR-Code aus E-Mail vor};
+
+        \draw [dashed, ->] (note) -- (scan);
+    \end{tikzpicture}
+    \caption{Use-Case-Diagramm: Einlösung des QR-Codes durch einen Mitarbeiter}
+    \label{fig:use_case_diagram}
 \end{figure}
 
 \input{Anhang/AnhangPflichtenheft.tex}
