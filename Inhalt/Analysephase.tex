@@ -92,10 +92,16 @@ Ein Use Case-Diagramm befindet sich im \Anhang{app:UseCase}.
 
 \subsection{Qualitätsanforderungen}
 \label{sec:Qualitaetsanforderungen}
-\begin{itemize}
-	\item Welche Qualitätsanforderungen werden an die Anwendung gestellt (\zB hinsichtlich Performance, Usability, Effizienz \etc (siehe \citet{ISO9126}))?
-\end{itemize}
 
+Ein zentraler Qualitätsaspekt ist die Fehlerfreiheit der Anwendung. Es sollten möglichst wenig Fehler in der Benutzung auftreten. Falls dennoch Fehler auftreten, muss klar und verständlich kommuniziert werden, was falsch gelaufen ist. Die Fehlermeldungen sollten in einer Form präsentiert werden, die dem Benutzer nützliche Informationen liefert, um das Problem zu beheben oder den Support zu kontaktieren. Kritische Fehler, die das gesamte Programm lahmlegen, sind unbedingt zu vermeiden.
+
+Die Zuverlässigkeit des Systems ist ein weiterer wichtiger Faktor. Benutzer müssen sich darauf verlassen können, dass ein als gültig angezeigtes Ticket tatsächlich gültig ist. Das System sollte sich so gut wie möglich vor gefälschten oder manipulierten Tickets schützen. Ein Fehler in der Verifizierung der Tickets kann zu erheblichen finanziellen Verlusten für den Kunden führen. Daher muss das System stets korrekte und verlässliche Ergebnisse liefern.
+
+Die Usability der Anwendung spielt ebenfalls eine große Rolle. Die Benutzeroberfläche sollte intuitiv und benutzerfreundlich gestaltet sein, sodass auch unerfahrene Benutzer problemlos mit dem System arbeiten können.
+
+Die Integrationsfähigkeit in die bestehende Umgebung spielt auch eine entscheidende Rolle. Das Programm muss sich nahtlos in die vorhandene Infrastruktur integrieren lassen und die vorgegebene Struktur von Symfony Bundles einhalten. Dies gewährleistet eine reibungslose Integration in bestehende Systeme und erleichtert die Wartung und Erweiterung der Anwendung.
+
+Das Programm muss außerdem sicherstellen, dass nur Mitarbeiter mit einem hinterlegten Login Zugang zu dem Einlösetool haben. Diese Maßnahme verhindert, dass Tickets versehentlich entwertet werden oder sensible Bestellinformationen von unbefugten Personen eingesehen werden können. Die Zugriffskontrolle stellt sicher, dass nur autorisierte Mitarbeiter die notwendigen Funktionen nutzen können.
 
 \subsection{Lastenheft/Fachkonzept}
 \label{sec:Lastenheft}
