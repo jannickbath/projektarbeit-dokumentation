@@ -5,10 +5,17 @@
 \subsection{Zielplattform}
 \label{sec:Zielplattform}
 
-\begin{itemize}
-	\item Beschreibung der Kriterien zur Auswahl der Zielplattform (\ua Programmiersprache, Datenbank, Client/Server, Hardware).
-\end{itemize}
+\textbf{Programmiersprache:} Die Anwendung wird in PHP unter Verwendung des Symfony-Frameworks entwickelt. Symfony bietet eine robuste und flexible Grundlage für Webanwendungen und unterstützt die Erstellung von sicheren und skalierbaren Lösungen. Die Wahl von PHP und Symfony ermöglicht eine effiziente Entwicklung und Wartung der Anwendung.
 
+\textbf{Datenbank:} Als Datenbank wird MySQL eingesetzt. MySQL ist eine weit verbreitete, leistungsstarke und zuverlässige relationale Datenbank, die gut mit Symfony und PHP integriert werden kann. Sie bietet die notwendige Leistung und Stabilität, um die Bestelldaten und QR-Codes sicher zu speichern und schnell abzurufen.
+
+\textbf{Client/Server-Architektur:} Die Anwendung wird als Webanwendung mit einer Client/Server-Architektur implementiert. Dies ermöglicht eine zentrale Verwaltung und Aktualisierung der Anwendung auf dem Server, während die Benutzer über ihre Webbrowser auf die Anwendung zugreifen. Die Verwendung einer Webanwendung stellt sicher, dass keine zusätzliche Software auf den Endgeräten der Benutzer installiert werden muss.
+
+\textbf{Hardware:} Die Zielplattform umfasst Smartphones, da diese über integrierte Kameras verfügen, die für das Scannen der QR-Codes erforderlich sind. Die Anwendung soll auf allen Smartphones mit Webbrowsern und einer Internetverbindung zugänglich sein. Dies stellt sicher, dass alle Mitarbeiter unabhängig vom verwendeten Gerät auf die Anwendung zugreifen können.
+
+Die Entscheidung für PHP, Symfony und MySQL fiel, weil diese Technologien in unserem Betrieb gängig sind und von unseren Entwicklern routiniert verwendet werden. Dadurch kann effizient und schnell gearbeitet werden. Zudem ermöglicht diese Kombination die Erstellung von Composer-Bundles, die sich nahtlos in andere Symfony-Projekte integrieren lassen.
+
+Besonders wichtig ist dies, weil das Kundenprojekt, in dem das Bundle eingebunden werden soll, Contao verwendet, welches auf Symfony basiert. Diese Auswahl an Technologien erleichtert die Implementierung und gewährleistet eine konsistente Benutzererfahrung.
 
 \subsection{Architekturdesign}
 \label{sec:Architekturdesign}
