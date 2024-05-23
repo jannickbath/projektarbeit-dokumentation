@@ -23,13 +23,16 @@ Ein Screenshot der DCA-Datei wird im Anhang bereitgestellt, um eine visuelle Dar
 \subsection{Implementierung der Benutzeroberfläche}
 \label{sec:ImplementierungBenutzeroberflaeche}
 
-\begin{itemize}
-	\item Beschreibung der Implementierung der Benutzeroberfläche, falls dies separat zur Implementierung der Geschäftslogik erfolgt (\zB bei \acs{HTML}-Oberflächen und Stylesheets).
-	\item \Ggfs Beschreibung des Corporate Designs und dessen Umsetzung in der Anwendung.
-	\item Screenshots der Anwendung
-\end{itemize}
+Die Implementierung der Benutzeroberfläche für das QR-Code-basierte Einlösungsprogramm erfolgte unter Verwendung von HTML5-Templates, die sowohl HTML als auch PHP beinhalten. Diese Kombination ermöglicht eine flexible und dynamische Darstellung der Inhalte, die durch die Backend-Logik gesteuert wird.
 
-\paragraph{Beispiel}
+Für das Styling der Benutzeroberfläche kamen SCSS-Dateien zum Einsatz. SCSS, als Erweiterung von CSS, bietet zusätzliche Funktionen wie Variablen, geschachtelte Regeln und Mixins, die die Erstellung und Verwaltung der Stylesheets erheblich vereinfachen. Diese SCSS-Dateien wurden mithilfe des SASS Pre-Processors in reguläres CSS kompiliert und anschließend in die HTML5-Templates eingebunden.
+
+Die Logik im Frontend wurde mit JavaScript realisiert. JavaScript wurde verwendet, um interaktive Elemente in die Benutzeroberfläche zu integrieren. Dies umfasst unter anderem die Implementierung der QR-Code-Scanfunktion, die Überprüfung und Validierung der Eingaben sowie die Anzeige von Bestellinformationen und Fehlermeldungen.
+
+Für das Scannen der QR-Codes wurde die externe Bibliothek \texttt{html5-qrcode} verwendet. Diese Bibliothek bietet eine leistungsfähige und benutzerfreundliche Möglichkeit, QR-Codes direkt im Browser mithilfe der Gerätekamera zu scannen.
+
+Die Gestaltung der Benutzeroberfläche basiert auf den vorgegebenen Figma-Designs. Diese Designs wurden als Grundlage für die Entwicklung verwendet, um sicherzustellen, dass die Benutzeroberfläche sowohl ästhetisch ansprechend als auch funktional ist.
+
 Screenshots der Anwendung in der Entwicklungsphase mit Dummy-Daten befinden sich im \Anhang{Screenshots}.
 
 
