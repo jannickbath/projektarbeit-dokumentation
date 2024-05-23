@@ -19,15 +19,16 @@ Besonders wichtig ist dies, weil das Kundenprojekt, in dem das Bundle eingebunde
 
 \subsection{Architekturdesign}
 \label{sec:Architekturdesign}
-\begin{itemize}
-	\item Beschreibung und Begründung der gewählten Anwendungsarchitektur (\zB \acs{MVC}).
-	\item \Ggfs Bewertung und Auswahl von verwendeten Frameworks sowie \ggfs eine kurze Einführung in die Funktionsweise des verwendeten Frameworks.
-\end{itemize}
 
-\paragraph{Beispiel}
-Anhand der Entscheidungsmatrix in Tabelle~\ref{tab:Entscheidungsmatrix} wurde für die Implementierung der Anwendung das \acs{PHP}-Framework Symfony\footnote{\Vgl \citet{Symfony}.} ausgewählt. 
+Für das QR-Code-basierte Einlösungsprogramm wurde das Symfony-Framework ausgewählt, das die Grundlage für das verwendete Contao CMS bildet. Diese Entscheidung wurde sowohl aufgrund der spezifischen Anforderungen des Projekts als auch der etablierten Praktiken im Betrieb getroffen. Symfony und Contao bieten eine leistungsfähige Kombination, die auf dem Model-View-Controller (MVC) Muster basiert. Dieses Architekturmuster teilt die Anwendung in drei Hauptkomponenten: Modell, Ansicht und Controller.
 
-\tabelle{Entscheidungsmatrix}{tab:Entscheidungsmatrix}{Nutzwert.tex}
+Das MVC-Modell ermöglicht eine klare Trennung der Geschäftslogik von der Benutzeroberfläche. Diese Struktur erleichtert die Arbeit am Projekt, da die Logik der QR-Code-Generierung und -Verifizierung unabhängig von der Präsentation implementiert werden kann.
+
+Ein zentraler Vorteil von Symfony und Contao liegt in der nativen Unterstützung von Composer, welches die Erstellung von Bundles ermöglicht. Ein Bundle fungiert als eine Art Plugin oder Modul, das bestimmte Funktionen kapselt und wiederverwendbar macht. Im Rahmen dieses Projekts wird das QR-Code-Tool als Bundle entwickelt, wodurch es sich problemlos in andere Contao-Projekte integrieren lässt.
+
+Für die Authentifizierung der Benutzer kann die Mitgliedsverwaltung von Contao genutzt werden. Dies stellt sicher, dass nur autorisierte Benutzer auf das Einlösetool zugreifen können und sensible Bestellinformationen geschützt bleiben.
+
+Die integrierten Sicherheitsmechanismen von Symfony, einschließlich der Benutzer-Authentifizierung und -Autorisierung, stellen sicher, dass die Anwendung vor unbefugtem Zugriff geschützt ist und die Integrität der Bestelldaten gewahrt bleibt.
 
 
 \subsection{Entwurf der Benutzeroberfläche}
