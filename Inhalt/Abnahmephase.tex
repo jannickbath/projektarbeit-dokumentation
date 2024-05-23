@@ -2,9 +2,14 @@
 \section{Abnahmephase} 
 \label{sec:Abnahmephase}
 
-\begin{itemize}
-	\item Welche Tests (\zB Unit-, Integrations-, Systemtests) wurden durchgeführt und welche Ergebnisse haben sie geliefert (\zB Logs von Unit Tests, Testprotokolle der Anwender)?
-	\item Wurde die Anwendung offiziell abgenommen?
-\end{itemize}
+In der Abnahmephase wurde das Programm ausführlich getestet, um sicherzustellen, dass es allen Anforderungen entspricht und zuverlässig funktioniert. Verschiedene Testarten wurden durchgeführt, wobei der Fokus auf Anwendertests lag. Diese Tests wurden von projektfremden, internen Mitarbeitern und dem Entwickler durchgeführt, die das Frontend des Programms aus der Sicht der Endbenutzer testeten. 
 
-Das Testprotokoll der Frontend-Tests, welche vor Abnahme durchgeführt wurden, befindet sich im \Anhang{app:Test}.
+Die Anwendertests umfassten die Überprüfung aller Hauptfunktionen des Programms, einschließlich der Generierung und Verwaltung von QR-Codes, der Verifizierung und Einlösung von Tickets sowie der Benutzerfreundlichkeit der Oberfläche. Diese Tests stellten sicher, dass das Programm intuitiv und benutzerfreundlich ist und dass alle interaktiven Elemente korrekt funktionieren. Die Testergebnisse waren insgesamt positiv, wobei es einen Verbesserungsvorschlag bezüglich der Benutzerbarkeit gab.
+
+Zusätzlich zu den Anwendertests wurde die Anwendung im Symfony-Debug-Modus überprüft. Dieser Modus ermöglichte eine detaillierte Analyse und Diagnose möglicher Fehler, die im Frontend nicht sofort sichtbar sind. Die Symfony-Logdateien wurden ebenfalls sorgfältig untersucht, um sicherzustellen, dass keine schwerwiegenden Fehler oder Probleme im Backend der Anwendung vorliegen. Diese Überprüfungen bestätigten, dass die Anwendung stabil und zuverlässig ist.
+
+Die Ergebnisse der Anwendertests wurden dokumentiert. Alle identifizierten Fehler wurden behoben, und die finalen Tests zeigten, dass das Programm die festgelegten Anforderungen erfüllt.
+
+Nach Abschluss der Tests und Korrekturen wurde das Projekt offiziell vom Projektverantwortlichen abgenommen. Die Abnahme erfolgte mündlich und bestätigte, dass das Programm die gestellten Anforderungen erfüllt und betriebsbereit ist. Anschließend wurde das Projekt an einen anderen Entwickler zur weiteren Wartung und Erweiterung übergeben.
+
+Das Protokoll des finalen Frontend-Tests, welcher vor Abnahme durchgeführt wurde, befindet sich im \Anhang{app:test}.
