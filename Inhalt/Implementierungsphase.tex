@@ -5,10 +5,20 @@
 \subsection{Implementierung der Datenstrukturen}
 \label{sec:ImplementierungDatenstrukturen}
 
+Contao generiert die Datenbanktabellen automatisch anhand der DCA-Dateien, die im \texttt{dca/} Ordner des jeweiligen Bundles hinterlegt sind. Eine DCA-Datei enthält die Konfiguration für eine Datenbanktabelle, einschließlich der Definition der Felder und deren Eigenschaften. Beim Installations- oder Aktualisierungsprozess liest Contao diese Konfigurationsdateien aus und erstellt oder aktualisiert die entsprechenden Tabellen in der Datenbank.
+
+Die DCA-Datei definiert die Struktur und die Felder der Tabelle, einschließlich der SQL-Typen und anderer relevanter Einstellungen. Contao interpretiert diese Informationen und generiert die erforderlichen SQL-Befehle, um die Datenbanktabellen anzulegen oder zu aktualisieren.
+
+Die Tabelle \texttt{tl\_iso\_order\_hashes} wurde erstellt, um die QR-Codes und deren zugehörige Informationen zu verwalten.
+
 \begin{itemize}
-	\item Beschreibung der angelegten Datenbank (\zB Generierung von \acs{SQL} aus Modellierungswerkzeug oder händisches Anlegen), \acs{XML}-Schemas \usw.
+    \item \textbf{id}: Dieses Feld dient als Primärschlüssel und wird automatisch hochgezählt. Es wird als \texttt{int(10) unsigned} definiert, um eine ausreichende Anzahl von Einträgen zu ermöglichen.
+    \item \textbf{hash}: Dieses Feld speichert den aus Bestellinformationen generierten Hash-Wert. Es ist als \texttt{varchar(64)} definiert, um den Hash-Wert aufzunehmen, wobei 64 Zeichen ausreichend für einen sicheren Hash-Wert sind.
+    \item \textbf{iso\_product\_collection\_id}: Dieses Feld speichert die ID der zugehörigen Produktkollektion aus dem Isotope-Shop. Es wird als \texttt{int(10)} definiert.
+    \item \textbf{valid}: Dieses Feld definiert die Gültigkeit des QR-Codes. Es ist als \texttt{int(1)} definiert, wobei der Standardwert \texttt{0} ist. Ein Wert von \texttt{1} bedeutet, dass der QR-Code gültig und noch nicht eingelöst ist.
 \end{itemize}
 
+Ein Screenshot der DCA-Datei wird im Anhang bereitgestellt, um eine visuelle Darstellung der Konfiguration zu bieten. Der Screenshot ist hier zu finden: \Anhang{app:ScreenshotDca}.
 
 \subsection{Implementierung der Benutzeroberfläche}
 \label{sec:ImplementierungBenutzeroberflaeche}
