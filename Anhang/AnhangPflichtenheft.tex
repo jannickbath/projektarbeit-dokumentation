@@ -4,49 +4,46 @@
 \subsubsection*{Zielbestimmung}
 
 \begin{enumerate}[itemsep=0em,partopsep=0em,parsep=0em,topsep=0em]
-\item Musskriterien
+    \item \textbf{Generierung und Verwaltung von QR-Codes}
     \begin{enumerate}
-        \item Generierung und Verwaltung von QR-Codes
-        \begin{itemize}
-            \item Das Programm muss für jede abgeschlossene Bestellung automatisch einen einzigartigen QR-Code erstellen.
-            \item Jeder generierte QR-Code muss in der Datenbank erfasst und gespeichert werden.
-            \item Die QR-Codes müssen per E-Mail an die Kunden verschickt werden.
-        \end{itemize}
-        
-        \item Einlösung und Verifizierung von QR-Codes
-        \begin{itemize}
-            \item Das Programm muss das Scannen der QR-Codes mittels der Kamera eines mobilen Endgeräts ermöglichen.
-            \item Das Programm muss die Gültigkeit der gescannten QR-Codes überprüfen.
-            \item Beim Scannen eines QR-Codes müssen die relevanten Bestellinformationen angezeigt werden.
-            \item Das Programm muss die Einlösung der QR-Codes bestätigen und diese als eingelöst markieren.
-            \item Ungültige oder bereits eingelöste QR-Codes dürfen nicht erneut akzeptiert werden.
-        \end{itemize}
+        \item Das Programm wird eine Funktion zur automatischen Generierung eines einzigartigen QR-Codes für jede abgeschlossene Bestellung implementieren.
+        \item Die QR-Codes werden mithilfe einer Bibliothek namens \texttt{php-qrcode} erstellt. Diese Bibliothek ermöglicht es eine Zeichenkette in einen QR-Code zu verwandeln.
+        \item Jeder generierte QR-Code wird in der Datenbank gespeichert. Dazu wird eine Tabelle \texttt{tl\_iso\_order\_hashes} verwendet, die die QR-Codes zusammen mit der zugehörigen Bestell-ID und weiteren Metadaten speichert.
+        \item Die generierten QR-Codes werden automatisch per E-Mail an die Kunden versendet. Dafür wird eine E-Mail-Versandfunktion integriert, die die QR-Codes als Anhang oder Bild in die E-Mail einfügt.
+    \end{enumerate}
+    
+    \item \textbf{Einlösung und Verifizierung von QR-Codes}
+    \begin{enumerate}
+        \item Das Programm wird eine Scanfunktion bereitstellen, die mithilfe der Bibliothek \texttt{html5-qrcode} die QR-Codes mit der Kamera eines mobilen Endgeräts scannt.
+        \item Die Gültigkeit der gescannten QR-Codes wird überprüft, indem der QR-Code mit den in der Datenbank gespeicherten Hashes abgeglichen wird. Es wird sichergestellt, dass der QR-Code gültig und nicht bereits eingelöst ist.
+        \item Nach dem Scannen eines QR-Codes zeigt das Programm die relevanten Bestellinformationen an, die aus der Datenbank abgerufen werden. Diese Informationen umfassen die Bestellnummer, den Namen des Kunden und die Details der Bestellung.
+        \item Die Einlösung der QR-Codes wird im System markiert, indem der Status des QR-Codes in der Datenbank auf "eingelöst" gesetzt wird. Dies verhindert die erneute Nutzung des gleichen QR-Codes.
+        \item Das Programm stellt sicher, dass ungültige oder bereits eingelöste QR-Codes nicht akzeptiert werden, indem es eine entsprechende Fehlermeldung anzeigt.
+    \end{enumerate}
 
-        \item Benutzeroberfläche und Usability
-        \begin{itemize}
-            \item Die Benutzeroberfläche des Programms muss intuitiv und benutzerfreundlich gestaltet sein.
-            \item Die Navigation innerhalb des Programms muss klar und strukturiert sein.
-            \item Fehlermeldungen müssen verständlich und hilfreich formuliert sein.
-        \end{itemize}
+    \item \textbf{Benutzeroberfläche und Usability}
+    \begin{enumerate}
+        \item Die Benutzeroberfläche wird mithilfe von HTML5-Templates und SCSS entwickelt. Diese Templates werden so gestaltet, dass sie intuitiv und benutzerfreundlich sind.
+        \item Die Navigation innerhalb des Programms wird klar und logisch strukturiert, sodass Benutzer leicht zwischen den verschiedenen Funktionen wechseln können.
+        \item Fehlermeldungen werden klar formuliert und hilfreich gestaltet, um den Benutzern die Lösung von Problemen zu erleichtern. Für das anzeigen dynamischer Fehlermeldungen wird JavaScript verwendet.
+    \end{enumerate}
 
-        \item Sicherheit und Zugriffskontrolle
-        \begin{itemize}
-            \item Das Programm muss vor gefälschten und manipulierten QR-Codes sicher sein.
-            \item Es muss sichergestellt werden, dass nur autorisierte Mitarbeiter Zugang zum Programm haben.
-            \item Die Zugriffskontrolle muss verhindern, dass unbefugte Personen sensible Bestellinformationen einsehen oder Tickets versehentlich entwerten können.
-        \end{itemize}
+    \item \textbf{Sicherheit und Zugriffskontrolle}
+    \begin{enumerate}
+        \item Das Programm wird Maßnahmen zum Schutz vor gefälschten und manipulierten QR-Codes integrieren.
+        \item Es wird sichergestellt, dass nur autorisierte Mitarbeiter Zugang zum Programm haben. Dies wird durch die Mitgliedsverwaltung in Contao realisiert, die den Zugriff auf bestimmte Funktionen und Daten einschränkt.
+        \item Die Zugriffskontrolle verhindert, dass unbefugte Personen sensible Bestellinformationen einsehen oder Tickets versehentlich entwerten können.
+    \end{enumerate}
 
-        \item Integrationsfähigkeit
-        \begin{itemize}
-            \item Das Programm muss sich nahtlos in die bestehende Systemlandschaft integrieren.
-            \item Die Struktur des Programms muss den Anforderungen eines Symfony Bundles entsprechen.
-        \end{itemize}
+    \item \textbf{Integrationsfähigkeit}
+    \begin{enumerate}
+        \item Das Programm wird als Symfony Bundle entwickelt, das sich nahtlos in die bestehende Contao-Umgebung integrieren lässt. Dies erleichtert die Installation und Wartung.
+        \item Die Struktur des Programms entspricht den Anforderungen eines Symfony Bundles, sodass es problemlos in andere Projekte eingebunden werden kann.
+    \end{enumerate}
 
-        \item Zuverlässigkeit und Effizienz
-        \begin{itemize}
-            \item Das Programm muss zuverlässig und korrekt arbeiten.
-            \item Kritische Fehler, die das gesamte Programm lahmlegen, müssen unbedingt vermieden werden.
-        \end{itemize}
+    \item \textbf{Zuverlässigkeit und Effizienz}
+    \begin{enumerate}
+        \item Das Programm wird so entwickelt, dass es zuverlässig und korrekt arbeitet. Dies wird durch manuelle Frontend-Tests sichergestellt.
     \end{enumerate}
 \end{enumerate}
 
