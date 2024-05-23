@@ -71,11 +71,12 @@ Ein Klassendiagramm, welches die Klassen der Anwendung und deren Beziehungen unt
 
 \subsection{Maßnahmen zur Qualitätssicherung}
 \label{sec:Qualitaetssicherung}
-\begin{itemize}
-	\item Welche Maßnahmen werden ergriffen, um die Qualität des Projektergebnisses (siehe Kapitel~\ref{sec:Qualitaetsanforderungen}: \nameref{sec:Qualitaetsanforderungen}) zu sichern (\zB automatische Tests, Anwendertests)?
-	\item \Ggfs Definition von Testfällen und deren Durchführung (durch Programme/Benutzer).
-\end{itemize}
 
+Die Überprüfung der korrekten Ausführung des Codes erfolgte mithilfe des Debug-Modus von Symfony und auslesen von Log-Dateien. Durch dieses Debugging konnten potenzielle Fehlerquellen identifiziert und behoben werden, bevor sie zu größeren Problemen führten.
+
+Es wurden außerdem Frontend-Tests durchgeführt, um die Funktionalität und Benutzerfreundlichkeit der Anwendung sicherzustellen. Diese Tests beinhalteten die Simulation der typischen Benutzerinteraktionen, wie das Scannen und Verifizieren von QR-Codes, sowie die Überprüfung der Navigations- und Anzeigeelemente. Ziel war es, sicherzustellen, dass alle erforderlichen Features reibungslos funktionieren und die Anwendung intuitiv bedienbar ist.
+
+Die Sicherheitsaspekte der Anwendung wurden ebenfalls getestet. Dies umfasste die Zugangskontrolle, bei der überprüft wurde, dass nur autorisierte Mitarbeiter mit einem hinterlegten Login auf das Einlösetool zugreifen können. Dadurch wurde gewährleistet, dass sensible Bestellinformationen geschützt und Tickets nicht versehentlich entwertet werden.
 
 \subsection{Pflichtenheft/Datenverarbeitungskonzept}
 \label{sec:Pflichtenheft}
