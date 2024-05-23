@@ -1,15 +1,48 @@
 \subsection{Benutzerdokumentation}
 \label{app:BenutzerDoku}
-Ausschnitt aus der Benutzerdokumentation:
 
-\begin{table}[htb]
-\begin{tabularx}{\textwidth}{cXX}
-\rowcolor{heading}\textbf{Symbol} & \textbf{Bedeutung global} & \textbf{Bedeutung einzeln} \\
-\includegraphicstotab[]{weather-clear.png} & Alle Module weisen den gleichen Stand auf. & Das Modul ist auf dem gleichen Stand wie das Modul auf der vorherigen Umgebung. \\
-\rowcolor{odd}\includegraphicstotab[]{weather-clear-night.png} & Es existieren keine Module (fachlich nicht möglich). & Weder auf der aktuellen noch auf der vorherigen Umgebung sind Module angelegt. Es kann also auch nichts übertragen werden. \\
-\includegraphicstotab[]{weather-few-clouds-night.png} & Ein Modul muss durch das Übertragen von der vorherigen Umgebung erstellt werden. & Das Modul der vorherigen Umgebung kann übertragen werden, auf dieser Umgebung ist noch kein Modul vorhanden. \\
-\rowcolor{odd}\includegraphicstotab[]{weather-few-clouds.png} & Auf einer vorherigen Umgebung gibt es ein Modul, welches übertragen werden kann, um das nächste zu aktualisieren. & Das Modul der vorherigen Umgebung kann übertragen werden um dieses zu aktualisieren. \\
-\includegraphicstotab[]{weather-storm.png} & Ein Modul auf einer Umgebung wurde entgegen des Entwicklungsprozesses gespeichert. & Das aktuelle Modul ist neuer als das Modul auf der vorherigen Umgebung oder die vorherige Umgebung wurde übersprungen. \\
-\end{tabularx}
-\end{table}
+\justifying
+
+\subsubsection{Starten des Programms}
+Öffnen Sie den Webbrowser Ihrer Wahl und navigieren Sie zu \url{https://[domain]/einloesen}. Wenn Sie nicht eingeloggt sind, dann werden Sie nun zur Login-Seite weitergeleitet. Melden Sie sich hier mit Ihrem Mitgliedszugang von Contao an.
+
+Nachdem Sie sich erfolgreich eingeloggt haben, werden Sie zur Startseite weitergeleitet.
+
+Stellen Sie sicher, dass Ihre Kamera und Internetverbindung aktiviert sind, um alle Funktionen der Anwendung nutzen zu können.
+
+\subsubsection{Scannen eines QR-Codes}
+\textbf{QR-Code-Scanner öffnen:} Klicken sie auf der Startseite auf das QR-Code-Icon um den Scan-Prozess zu starten.
+
+\textbf{Kamera ausrichten:} Richten Sie die Kamera Ihres Geräts auf den QR-Code des Tickets. Achten Sie darauf, dass der QR-Code vollständig im Sichtfeld der Kamera ist.
+
+\textbf{QR-Code scannen:} Das Programm scannt den QR-Code automatisch und leitet Sie zur Ticketinformation weiter. Hier sehen Sie alle relevanten Details zur Bestellung.
+
+
+\subsubsection{Entwertung des Tickets}
+
+Nachdem der QR-Code erfolgreich gescannt wurde, können Sie das Ticket entwerten:
+
+\textbf{Ticketinformationen überprüfen:} Stellen Sie sicher, dass die angezeigten Informationen mit den Daten des Gastes übereinstimmen.
+
+\textbf{Ticket entwerten:} Klicken Sie auf die Schaltfläche "Ticket entwerten", um den QR-Code im System als eingelöst zu markieren.
+
+
+\subsubsection{Fehlerbehebung beim Scannen}
+
+Sollte der Scan fehlschlagen, gibt es einige Ansätze, um das Problem zu beheben:
+
+\textbf{Lichtverhältnisse anpassen:} Starkes Sonnenlicht kann den Bildschirm eines Handys schwer erkennbar machen. Stellen Sie sich, wenn nötig, in den Schatten, um den QR-Code besser sichtbar zu machen.
+
+\textbf{QR-Code vergrößern:} Wenn der QR-Code zu klein dargestellt wird, können Sie den Bildschirm vergrößern, um den QR-Code besser erkennbar zu machen. Nutzen Sie die Zoom-Funktion Ihres Geräts.
+
+
+\subsubsection{Manuelle Suche für Tickets}
+
+Falls der Scan-Prozess gerade nicht funktioniert, haben sie die Möglichkeit manuell nach Tickets zu suchen. Hierbei kann nach Datum, Bestellnummer oder Name gesucht werden.
+
+\textbf{Zur Ticketliste wechseln:} Klicken Sie auf der Hauptseite oder im QR-Code-Scanner auf den Button mit der Lupe, um zur Ticketliste zu gelangen.
+
+\textbf{Ticketnummer eingeben:} Geben Sie die Ticketnummer, Datum oder den Namen des Gastes in die Suchleiste ein.
+
+\textbf{Ticket entwerten:} Wählen Sie das entsprechende Ticket aus der Liste aus und klicken Sie auf "Ticket entwerten", um es manuell zu entwerten.
 
