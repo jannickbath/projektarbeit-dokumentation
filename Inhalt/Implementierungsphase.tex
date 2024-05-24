@@ -39,12 +39,20 @@ Screenshots der Anwendung befinden sich im \Anhang{Screenshots}.
 \subsection{Implementierung der Geschäftslogik}
 \label{sec:ImplementierungGeschaeftslogik}
 
-\begin{itemize}
-	\item Beschreibung des Vorgehens bei der Umsetzung/Programmierung der entworfenen Anwendung.
-	\item \Ggfs interessante Funktionen/Algorithmen im Detail vorstellen, verwendete Entwurfsmuster zeigen.
-	\item Quelltextbeispiele zeigen.
-	\item Hinweis: Wie in Kapitel~\ref{sec:Einleitung}: \nameref{sec:Einleitung} zitiert, wird nicht ein lauffähiges Programm bewertet, sondern die Projektdurchführung. Dennoch würde ich immer Quelltextausschnitte zeigen, da sonst Zweifel an der tatsächlichen Leistung des Prüflings aufkommen können.
-\end{itemize}
+Die Generierung der QR-Codes erfolgte mithilfe der Bibliothek `phpqrcode`. Eine speziell dafür entwickelte PHP-Klasse war für die Erstellung der QR-Codes verantwortlich. Bei jeder abgeschlossenen Bestellung generiert diese Klasse einen eindeutigen QR-Code, der in der Datenbank gespeichert wird. Die E-Mail-Versandfunktion ist bereits in dem Isotope-Shop-Plugin vorhanden.
+
+Für die Einlösung und Verifizierung der QR-Codes wurde eine separate PHP-Klasse entwickelt. Diese Klasse überprüft die Gültigkeit der gescannten QR-Codes und ruft die entsprechenden Bestellinformationen aus der Datenbank ab.
+
+Im Frontend kam die Bibliothek `html5-qrcode` zum Einsatz, die das Scannen der QR-Codes über die Kamera eines mobilen Endgeräts ermöglicht.
+
+Die Anwendung stellt sicher, dass nur gültige und nicht bereits eingelöste QR-Codes akzeptiert werden. Nach erfolgreicher Verifizierung markiert die Anwendung den QR-Code als eingelöst, um eine doppelte Nutzung zu verhindern.
+
+Die Anwendung wurde so strukturiert, dass eine API-Schnittstelle die Kommunikation zwischen Frontend und Backend ermöglicht. Diese API wurde verwendet, um Anfragen vom Frontend zu verarbeiten und entsprechend Tickets zu entwerten oder Bestellungen auszugeben. 
+
+Das Frontend selbst wurde mit HTML5-Templates und SCSS für das Styling entwickelt. JavaScript steuert die interaktiven Elemente der Anwendung.
+
+Nach der Implementierung der einzelnen Komponenten wurden diese von internen Mitarbeitern getestet, die nicht direkt am Projekt beteiligt waren. Sie führten umfangreiche Anwendertests durch.
+Zusätzlich wurden im Symfony-Debug-Modus Fehlerüberprüfungen durchgeführt und die Symfony-Logdateien analysiert, um sicherzustellen, dass keine versteckten Fehler vorhanden waren.
 
 \paragraph{Beispiel}
 Die Klasse \texttt{Com\-par\-ed\-Na\-tu\-ral\-Mo\-dule\-In\-for\-ma\-tion} findet sich im \Anhang{app:CNMI}.  
