@@ -5,9 +5,9 @@
 \subsection{Implementierung der Datenstrukturen}
 \label{sec:ImplementierungDatenstrukturen}
 
-Contao generiert die Datenbanktabellen automatisch anhand der DCA-Dateien, die im \texttt{dca/} Ordner des jeweiligen Bundles hinterlegt sind. Eine DCA-Datei enthält die Konfiguration für eine Datenbanktabelle, einschließlich der Definition der Felder und deren Eigenschaften. Beim Installations- oder Aktualisierungsprozess liest Contao diese Konfigurationsdateien aus und erstellt oder aktualisiert die entsprechenden Tabellen in der Datenbank.
+Contao generiert die Datenbanktabellen automatisch anhand der \acro{DCA}-Dateien, die im \texttt{dca/} Ordner des jeweiligen Bundles hinterlegt sind. Eine \acro{DCA}-Datei enthält die Konfiguration für eine Datenbanktabelle, einschließlich der Definition der Felder und deren Eigenschaften. Beim Installations- oder Aktualisierungsprozess liest Contao diese Konfigurationsdateien aus und erstellt oder aktualisiert die entsprechenden Tabellen in der Datenbank.
 
-Die DCA-Datei definiert die Struktur und die Felder der Tabelle, einschließlich der SQL-Typen und anderer relevanter Einstellungen. Contao interpretiert diese Informationen und generiert die erforderlichen SQL-Befehle, um die Datenbanktabellen anzulegen oder zu aktualisieren.
+Die DCA-Datei definiert die Struktur und die Felder der Tabelle, einschließlich der SQL-Typen und anderer relevanter Einstellungen. Contao interpretiert diese Informationen und generiert die erforderlichen \acro{SQL}-Befehle, um die Datenbanktabellen anzulegen oder zu aktualisieren.
 
 Die Tabelle \texttt{tl\_iso\_order\_hashes} wurde erstellt, um die QR-Codes und deren zugehörige Informationen zu verwalten.
 
@@ -23,9 +23,9 @@ Ein Screenshot der DCA-Datei wird im Anhang bereitgestellt, um eine visuelle Dar
 \subsection{Implementierung der Benutzeroberfläche}
 \label{sec:ImplementierungBenutzeroberflaeche}
 
-Die Implementierung der Benutzeroberfläche für das QR-Code-basierte Einlösungsprogramm erfolgte unter Verwendung von HTML5-Templates, die sowohl HTML als auch PHP beinhalten. Diese Kombination ermöglicht eine flexible und dynamische Darstellung der Inhalte, die durch die Backend-Logik gesteuert wird.
+Die Implementierung der Benutzeroberfläche für das QR-Code-basierte Einlösungsprogramm erfolgte unter Verwendung von HTML5-Templates, die sowohl \acs{HTML} als auch \acs{PHP} beinhalten. Diese Kombination ermöglicht eine flexible und dynamische Darstellung der Inhalte, die durch die Backend-Logik gesteuert wird.
 
-Für das Styling der Benutzeroberfläche kamen SCSS-Dateien zum Einsatz. SCSS, als Erweiterung von CSS, bietet zusätzliche Funktionen wie Variablen, geschachtelte Regeln und Mixins, die die Erstellung und Verwaltung der Stylesheets erheblich vereinfachen. Diese SCSS-Dateien wurden mithilfe des SASS Pre-Processors in reguläres CSS kompiliert und anschließend in die HTML5-Templates eingebunden.
+Für das Styling der Benutzeroberfläche kamen SCSS-Dateien zum Einsatz. \acs{SCSS}, als Erweiterung von \acs{CSS}, bietet zusätzliche Funktionen wie Variablen, geschachtelte Regeln und Mixins, die die Erstellung und Verwaltung der Stylesheets erheblich vereinfachen. Diese SCSS-Dateien wurden mithilfe des \acs{SASS} Pre-Processors in reguläres \acs{CSS} kompiliert und anschließend in die HTML5-Templates eingebunden.
 
 Die Logik im Frontend wurde mit JavaScript realisiert. JavaScript wurde verwendet, um interaktive Elemente in die Benutzeroberfläche zu integrieren. Dies umfasst unter anderem die Implementierung der QR-Code-Scanfunktion, die Überprüfung und Validierung der Eingaben sowie die Anzeige von Bestellinformationen und Fehlermeldungen.
 
@@ -47,9 +47,9 @@ Im Frontend kam die Bibliothek `html5-qrcode` zum Einsatz, die das Scannen der Q
 
 Die Anwendung stellt sicher, dass nur gültige und nicht bereits eingelöste QR-Codes akzeptiert werden. Nach erfolgreicher Verifizierung markiert die Anwendung den QR-Code als eingelöst, um eine doppelte Nutzung zu verhindern.
 
-Die Anwendung wurde so strukturiert, dass eine API-Schnittstelle die Kommunikation zwischen Frontend und Backend ermöglicht. Diese API wurde verwendet, um Anfragen vom Frontend zu verarbeiten und entsprechend Tickets zu entwerten oder Bestellungen auszugeben. 
+Die Anwendung wurde so strukturiert, dass eine API-Schnittstelle die Kommunikation zwischen Frontend und Backend ermöglicht. Diese \acs{API} wurde verwendet, um Anfragen vom Frontend zu verarbeiten und entsprechend Tickets zu entwerten oder Bestellungen auszugeben. 
 
-Das Frontend selbst wurde mit HTML5-Templates und SCSS für das Styling entwickelt. JavaScript steuert die interaktiven Elemente der Anwendung.
+Das Frontend selbst wurde mit HTML5-Templates und \acs{SCSS} für das Styling entwickelt. JavaScript steuert die interaktiven Elemente der Anwendung.
 
 Nach der Implementierung der einzelnen Komponenten wurden diese von internen Mitarbeitern getestet, die nicht direkt am Projekt beteiligt waren. Sie führten umfangreiche Anwendertests durch.
 Zusätzlich wurden im Symfony-Debug-Modus Fehlerüberprüfungen durchgeführt und die Symfony-Logdateien analysiert, um sicherzustellen, dass keine versteckten Fehler vorhanden waren.
