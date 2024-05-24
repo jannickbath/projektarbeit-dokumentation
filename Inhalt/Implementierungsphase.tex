@@ -39,18 +39,14 @@ Screenshots der Anwendung befinden sich im \Anhang{Screenshots}.
 \subsection{Implementierung der Geschäftslogik}
 \label{sec:ImplementierungGeschaeftslogik}
 
-Die Generierung der QR-Codes erfolgte mithilfe der Bibliothek `phpqrcode`. Eine speziell dafür entwickelte PHP-Klasse war für die Erstellung der QR-Codes verantwortlich. Bei jeder abgeschlossenen Bestellung generiert diese Klasse einen eindeutigen QR-Code, der in der Datenbank gespeichert wird. Die E-Mail-Versandfunktion ist bereits in dem Isotope-Shop-Plugin vorhanden.
+Das Isotope-Plugin für den Online-Shop bietet eine Schnittstelle, um einen Callback zu registrieren. Hierbei wird die Klasse PostCheckout verwendet, deren Methode addOrderHash für den Callback registriert wird. Diese Methode übernimmt die Aufgabe, einen eindeutigen Hash für jede Bestellung zu generieren und zu speichern.
 
-Für die Einlösung und Verifizierung der QR-Codes wurde eine separate PHP-Klasse entwickelt. Diese Klasse überprüft die Gültigkeit der gescannten QR-Codes und ruft die entsprechenden Bestellinformationen aus der Datenbank ab.
+Im Frontend werden neue Routen bereitgestellt, die in der Klasse TicketRoutes definiert sind. Diese Klasse verwaltet die Navigation und die Zugriffskontrolle für die Benutzer. Falls ein Benutzer nicht authentifiziert ist, stellt dieser Controller sicher, dass der Benutzer zur Anmeldeseite weitergeleitet wird, bevor er auf geschützte Ressourcen zugreifen kann.
 
-Die Anwendung stellt sicher, dass nur gültige und nicht bereits eingelöste QR-Codes akzeptiert werden. Nach erfolgreicher Verifizierung markiert die Anwendung den QR-Code als eingelöst, um eine doppelte Nutzung zu verhindern.
+Zusätzlich wurden zwei API-Endpunkte im ApiController implementiert. Der erste Endpunkt ermöglicht die Entwertung von Tickets. Der zweite Endpunkt wird dafür genutzt Bestellungen aufzulisten. Die Bestellungen können hierbei durch einen GET-Parameter (?search=) gefiltert werden. Beide Endpunkte liefern ihre Antworten im JSON-Format. Bei Fehlern werden die entsprechenden HTTP-Fehlercodes und kurze Fehlermeldungen zurückgegeben, um eine Fehlerdiagnose zu ermöglichen.
 
-Die Anwendung wurde so strukturiert, dass eine API-Schnittstelle die Kommunikation zwischen Frontend und Backend ermöglicht. Diese \acs{API} wurde verwendet, um Anfragen vom Frontend zu verarbeiten und entsprechend Tickets zu entwerten oder Bestellungen auszugeben. 
+Für die Datenbankinteraktionen wurde die Klasse TLOrderHashes entwickelt. Diese Klasse bietet eine Abstraktionsschicht, die den direkten Umgang mit der Datenbank erleichtert. Sie enthält Methoden zum Erstellen, Lesen und Aktualisieren von Datensätzen, die mit den Bestell-Hashes verknüpft sind. Dies sorgt für eine saubere Trennung der Geschäftslogik von den Datenbankoperationen.
 
-Das Frontend selbst wurde mit HTML5-Templates und \acs{SCSS} für das Styling entwickelt. JavaScript steuert die interaktiven Elemente der Anwendung.
+Zusätzlich wurde eine allgemeine Helper-Klasse implementiert, die ein paar Hilfsfunktionen bereitstellt. Diese Funktionen decken gängige Aufgaben ab, die in verschiedenen Teilen des Programms benötigt werden.
 
-Nach der Implementierung der einzelnen Komponenten wurden diese von internen Mitarbeitern getestet, die nicht direkt am Projekt beteiligt waren. Sie führten umfangreiche Anwendertests durch.
-Zusätzlich wurden im Symfony-Debug-Modus Fehlerüberprüfungen durchgeführt und die Symfony-Logdateien analysiert, um sicherzustellen, dass keine versteckten Fehler vorhanden waren.
-
-% \paragraph{Beispiel}
-% Die Klasse \texttt{Com\-par\-ed\-Na\-tu\-ral\-Mo\-dule\-In\-for\-ma\-tion} findet sich im \Anhang{app:CNMI}.  
+Codebeispiele sind im \Anhang{app:CNMI} zu finden.  
