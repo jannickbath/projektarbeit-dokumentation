@@ -18,65 +18,25 @@ Der Auftraggeber dieses Projekts ist die \textbf{MS `Ostseebad Rerik`}, ein Ausf
 \subsection{Projektziel} 
 \label{sec:Projektziel}
 
-Ziel dieses Projekts ist die Entwicklung eines zuverlässigen und effizienten QR-Code-basierten Einlösungsprogramms. Dieses Programm soll den Einlösungsprozess digitalisieren und automatisieren. Konkret umfasst das Projektziel die folgenden Punkte:
-
-\begin{itemize}
-    \item \textbf{Generierung einzigartiger QR-Codes für spezifische Bestellungen:} Für jede Bestellung soll ein individueller QR-Code generiert werden, der durch einen Mitarbeiter eingescannt und entwertet werden kann.
-    \item \textbf{Sichere und effiziente Einlösung durch Scannen der QR-Codes:} Die QR-Codes sollen von den Mitarbeitern gescannt werden können, um die Echtheit und Gültigkeit der Tickets oder Gutscheine sofort zu überprüfen.
-    \item \textbf{Intuitive Benutzeroberfläche für die Überprüfung der Bestellinformationen und die Entwertung der Tickets/Gutscheine:} Das System soll eine benutzerfreundliche Oberfläche bieten, die es den Mitarbeitern ermöglicht, die Bestellinformationen schnell und einfach einzusehen und die Tickets oder Gutscheine nach der Einlösung zu entwerten.
-	\item \textbf{Einfache Installation mittels composer:} Die Anwendung muss mit dem Paketmanager composer kompatibel sein, um eine einfache Installation zu gewährleisten.
-\end{itemize}
-
-Durch die Erfüllung dieser Ziele wird das Projekt erfolgreich abgeschlossen.
+Das Ziel des Projekts ist es, den Einlösungsprozess von Tickets zu digitalisieren und automatisieren. Durch das Scannen der QR-Codes sollen die Mitarbeiter die Echtheit und Gültigkeit der Tickets sofort überprüfen können. Das System soll eine benutzerfreundliche Oberfläche bieten, die es den Mitarbeitern ermöglicht, Bestellinformationen schnell und einfach einzusehen und die Tickets zu entwerten.
 
 \subsection{Projektbegründung} 
 \label{sec:Projektbegruendung}
 
 Die Durchführung dieses Projekts soll mehrere bestehende Probleme im aktuellen Einlösungsprozess beheben und sowohl die Effizienz als auch die Zufriedenheit der Mitarbeiter steigern.
 
-\subsubsection{Aktuelles Problem}
-Der aktuelle Prozess zur Überprüfung und Einlösung von online erworbenen Tickets und Gutscheinen basiert auf manuellen Methoden. Diese manuelle Verifizierung ist zeitaufwendig und fehleranfällig, was zu einer ineffizienten Nutzung der Arbeitszeit führt und die Kundenzufriedenheit negativ beeinflusst.
+Der aktuelle Prozess zur Überprüfung und Einlösung von Tickets ist manuell, zeitaufwendig und fehleranfällig. Dies führt zu einer ineffizienten Nutzung der Arbeitszeit und beeinträchtigt die Kundenzufriedenheit.
 
-\subsubsection{Vorteile des QR-Code-basierten Systems}
-Die Entwicklung eines QR-Code-basierten Einlösungsprogramms bietet zahlreiche Vorteile:
-
-\begin{itemize}
-    \item \textbf{Reduktion von Fehlern:} Durch die Automatisierung des Verifizierungsprozesses werden menschliche Fehler minimiert, was die Zuverlässigkeit der Ticket- und Gutscheinüberprüfung erhöht.
-    \item \textbf{Zeitersparnis:} Mitarbeiter können QR-Codes schnell scannen und sofortige Rückmeldungen über die Gültigkeit der Tickets erhalten, was den gesamten Prozess beschleunigt.
-    \item \textbf{Erhöhte Sicherheit:} Das System gewährleistet eine sichere Einlösung von Tickets und Gutscheinen, wodurch Betrugsversuche reduziert werden.
-    \item \textbf{Verbesserte Kundenzufriedenheit:} Ein effizienter und schneller Einlösungsprozess steigert das Kundenerlebnis und das Vertrauen in die digitalen Dienstleistungen.
-\end{itemize}
-
-\subsubsection{Vorteile für die Mitarbeiter}
-Die Einführung eines QR-Code-basierten Einlösungsprogramms soll die Mitarbeiter vor Ort entlasten:
-
-\begin{itemize}
-    \item \textbf{Erleichterung der Arbeitsabläufe:} Die Automatisierung reduziert den manuellen Aufwand und die Komplexität der Aufgaben, was die Arbeitslast der Mitarbeiter verringert.
-    \item \textbf{Steigerung der Produktivität:} Mitarbeiter können ihre Zeit effizienter nutzen und sich auf andere wichtige Aufgaben konzentrieren.
-    \item \textbf{Verbesserte Arbeitsqualität:} Durch die Minimierung von Fehlern und die Vereinfachung der Prozesse wird die Qualität der Arbeit verbessert, was zu höherer Arbeitszufriedenheit führt.
-\end{itemize}
-
-Insgesamt soll die Implementierung eines QR-Code-basierten Einlösungsprogramms zu einer Verbesserung der Effizienz und Qualität der Arbeitsabläufe sowie zu einer gesteigerten Zufriedenheit der Mitarbeiter und Kunden führen.
+Durch die Automatisierung des Verifizierungsprozesses können menschliche Fehler minimiert werden, was die Zuverlässigkeit der Ticketüberprüfung erhöht. Mitarbeiter können QR-Codes schnell scannen und sofort Rückmeldung über die Gültigkeit der Tickets erhalten, was den gesamten Prozess beschleunigt. Das System soll eine sichere Einlösung von Tickets gewährleisten, wodurch Betrugsversuche reduziert werden können.
 
 \subsection{Projektschnittstellen} 
 \label{sec:Projektschnittstellen}
 
-Die Anwendung soll verschiedene Schnittstellen bereitstellen, um eine nahtlose Integration und effiziente Nutzung zu gewährleisten. Im Folgenden werden die geplanten Schnittstellen beschrieben.
+Die Anwendung wird verschiedene Schnittstellen bereitstellen, um eine nahtlose Integration und effiziente Nutzung zu gewährleisten. Die Anwendung soll sich nahtlos in das bestehende Shop-System Isotope und in das Framework Contao integrieren.
 
-\subsubsection{Technische Schnittstellen}
+Für jede Bestellung soll ein einzigartiger QR-Code generiert werden, der in der Datenbank gespeichert und den Kunden zur Verfügung gestellt wird. Darüber hinaus soll die Anwendung mehrere API-Endpunkte bereitstellen, um die Interaktion mit externen Systemen und die Verarbeitung der QR-Codes zu ermöglichen. Dies umfasst Endpunkte für die Validierung und Entwertung der QR-Codes sowie die Bereitstellung der entsprechenden Bestelldetails.
 
-\begin{itemize}
-    \item \textbf{Interaktion mit Shop-Systemen:} Die Anwendung soll sich nahtlos in die bestehenden Shop-Systeme integrieren. Hierbei soll für jede Bestellung ein einzigartiger QR-Code generiert werden, der in den Bestelldaten gespeichert und den Kunden zur Verfügung gestellt wird.
-    \item \textbf{API-Schnittstellen:} Die Anwendung soll mehrere API-Endpunkte bereitstellen, um die Interaktion mit externen Systemen und die Verarbeitung der QR-Codes zu ermöglichen. Dies umfasst Endpunkte für die Validierung und Entwertung der QR-Codes sowie die Bereitstellung der entsprechenden Bestelldetails.
-\end{itemize}
-
-\subsubsection{Präsentation der Ergebnisse}
-
-\begin{itemize}
-    \item \textbf{Benutzeroberfläche:} Die Ergebnisse der QR-Code-Verifizierung und Einlösung sollen über eine benutzerfreundliche Oberfläche präsentiert werden.
-    \item \textbf{Darstellung für Mitarbeiter:} Die Bestellinformationen sollen den Mitarbeitern in einem klaren und strukturierten Format präsentiert werden, um eine schnelle und effiziente Überprüfung und Entwertung der Tickets zu ermöglichen. Dies umfasst die Anzeige der Bestelldetails wie Bestellnummer, Datum und Status sowie den Entwertungsstatus.
-\end{itemize}
-
+Die Ergebnisse der Verifizierung und Einlösung sollen über eine benutzerfreundliche Oberfläche präsentiert werden. Die Bestellinformationen sollen den Mitarbeitern in einem klaren und strukturierten Format präsentiert werden, um eine schnelle und effiziente Überprüfung und Entwertung der Tickets zu ermöglichen. Dies umfasst die Anzeige der Bestelldetails wie Bestellnummer, Datum und Status sowie den Entwertungsstatus.
 
 \subsection{Projektabgrenzung} 
 \label{sec:Projektabgrenzung}
