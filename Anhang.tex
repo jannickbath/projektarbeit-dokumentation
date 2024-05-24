@@ -16,42 +16,16 @@
 \subsection{Use Case-Diagramm}
 \label{app:UseCase}
 
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}
-        \usetikzlibrary{shapes,arrows}
-        \tikzstyle{actor}=[draw, ellipse, fill=gray!20, minimum height=2em]
-        \tikzstyle{usecase}=[draw, ellipse, minimum height=2em, minimum width=3em]
-
-        \node [actor] (employee) {Mitarbeiter};
-        \node [usecase, right=of employee, yshift=2cm] (scan) {QR-Code scannen};
-        \node [usecase, below of=scan] (check) {Gültigkeit prüfen};
-        \node [usecase, below of=check] (display) {Ticketinformationen anzeigen};
-        \node [usecase, below of=display] (confirm) {Einlösung bestätigen};
-        \node [usecase, below of=confirm] (invalidate) {QR-Code als ungültig markieren};
-
-        \draw [->] (employee) -- (scan);
-        \draw [->] (scan) -- (check);
-        \draw [->] (check) -- (display);
-        \draw [->] (display) -- (confirm);
-        \draw [->] (confirm) -- (invalidate);
-
-        \node [below of=employee, yshift=-3cm] (note) {Kunde zeigt QR-Code aus E-Mail vor};
-
-        \draw [dashed, ->] (note) -- (scan);
-    \end{tikzpicture}
-    \caption{Use-Case-Diagramm: Einlösung des QR-Codes durch einen Mitarbeiter}
-    \label{fig:use_case_diagram}
-\end{figure}
+\includegraphicsKeepAspectRatio{Bilder/UseCaseFinish.png}{1}
 
 \input{Anhang/AnhangPflichtenheft.tex}
 
 \subsection{Datenbankmodell}
 \label{app:Datenbankmodell}
-ER-Modelle kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://www.texample.net/tikz/examples/entity-relationship-diagram/}.
+
 \begin{figure}[htb]
 \centering
-\includegraphicsKeepAspectRatio{database.pdf}{1}
+\includegraphicsKeepAspectRatio{Bilder/ERDProjektarbeitRework.png}{0.9}
 \caption{Datenbankmodell}
 \end{figure}
 \clearpage
